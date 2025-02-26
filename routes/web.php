@@ -75,3 +75,15 @@ Route::get('/articles/{id}', ArticleController::class);
 ///
 Route::resource('photos', PhotoController::class);
 
+///
+Route::get('/greetng', function () {
+    return view('hello', ['name' => 'Nazreal']);
+});
+
+///
+Route::get('/greeting', function () {
+    return view('blog/hello', ['name' => 'Nazril']);
+});
+
+///
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
