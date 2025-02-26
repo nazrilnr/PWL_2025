@@ -3,11 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\HomeController;
+//use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PhotoController;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SalesController;
 
 
 
@@ -87,3 +91,8 @@ Route::get('/greeting', function () {
 
 ///
 Route::get('/greeting', [WelcomeController::class, 'greeting']);
+
+Route::get('/', HomeController::class);
+Route::get('/category/{category}', ProductController::class);
+Route::get('/user/{id}/name/{name}', UserController::class);
+Route::get('/sales', SalesController::class);
